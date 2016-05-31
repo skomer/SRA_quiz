@@ -10,11 +10,15 @@ class Entry(models.Model):
 	q3_answer = models.CharField(max_length=1000)
 	status = models.BooleanField()
 
-	def save():
-		return
+	def __str__(self):
+		return self.email
 
-	def submit():
-		return
 
-	def edit():
-		return
+	# def save():
+	# 	return
+
+	# def submit():
+	# 	return
+
+	# def edit():
+	# 	return
