@@ -6,9 +6,10 @@
 		<title>SRA quiz</title>
 		<style>
 			body{font:12px/1.2 Verdana, sans-serif; padding:0 10px;}
-			a:link, a:visited{text-decoration:none; color:#416CE5; border-bottom:1px solid #416CE5;}
+			a:link, a:visited{text-decoration:none; color:#416CE5;}
 			h2{font-size:13px; margin:15px 0 0 0;}
 		</style>
+		<link rel="stylesheet" href="{% static 'SRA_quiz_1/normalise.css' %}"/>
 		<link rel="stylesheet" href="{% static 'SRA_quiz_1/colorbox.css' %}"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="{% static 'SRA_quiz_1/jquery.colorbox.js' %}"></script>
@@ -16,27 +17,13 @@
 			$(document).ready(function(){
 				//Examples of how to assign the Colorbox event to elements
 				$(".group2").colorbox({rel:'group2', transition:"fade"});
-				// $(".group4").colorbox({rel:'group4', slideshow:true});
 				$(".ajax").colorbox();
-				$(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
-				$(".vimeo").colorbox({iframe:true, innerWidth:500, innerHeight:409});
-				$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
-				$(".inline").colorbox({inline:true, width:"50%"});
 				$(".callbacks").colorbox({
 					onOpen:function(){ alert('onOpen: colorbox is about to open'); },
 					onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
 					onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
 					onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
 					onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
-				});
-
-				$('.non-retina').colorbox({rel:'group5', transition:'none'})
-				$('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
-				
-				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
-					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
-					return false;
 				});
 			});
 		</script>
@@ -55,9 +42,13 @@
 		<p><img src="{% static 'SRA_quiz_1/images/testimage3-min_tn.jpg' %}" ></p>
 
 		<h2>Fade Transition</h2>
-		<p><a class="group2"  href="{% static 'SRA_quiz_1/images/testimage1-min.jpg' %}" >
-			<img src="{% static 'SRA_quiz_1/images/testimage1-min_tn.jpg' %}" ></a></p>
-		<p><a class="group2"  href="{% static 'SRA_quiz_1/images/testimage2-min.jpg' %}" title="blah">Grouped Photo 1</a></p>
+		<a class="group2"  href="{% static 'SRA_quiz_1/images/testimage1-min.jpg' %}" >
+			<img src="{% static 'SRA_quiz_1/images/testimage1-min_tn.jpg' %}" ></a>
+		
+
+
+
+		<p><a class="group2"  href="{% static 'SRA_quiz_1/images/testimage2-min.jpg' %}" title="blah" >Grouped Photo 1</a></p>
 		<p><a class="group2"  href="{% static 'SRA_quiz_1/images/testimage3-min.jpg' %}" title="blah2">Grouped Photo 2</a></p>
 		<p><a class="group2"  href="{% static 'SRA_quiz_1/images/testimage4-min.jpg' %}" title="blah3">Grouped Photo 3</a></p>
 
@@ -91,13 +82,4 @@
 		</div>
 	</body>
 </html>
-
-
-
-
-
-
-
-<br><br>
-<h2>user_dash.html</h2>
 
