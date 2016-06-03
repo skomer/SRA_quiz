@@ -4,10 +4,10 @@ from django.db import models
 
 
 class Entry(models.Model):
-	email = models.CharField(max_length=200)
-	q1_answer = models.CharField(max_length=1000)
-	q2_answer = models.CharField(max_length=1000)
-	q3_answer = models.CharField(max_length=1000)
+	email = models.CharField(max_length=200, null = True)
+	q1_answer = models.CharField(max_length=1000, null = True)
+	q2_answer = models.CharField(max_length=1000, null = True)
+	q3_answer = models.CharField(max_length=1000, null = True)
 	status = models.BooleanField()
 
 	def __str__(self):

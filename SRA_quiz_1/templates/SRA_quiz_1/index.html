@@ -1,1 +1,13 @@
 <h2>Some basic html.</h2>
+
+
+
+
+<p>Enter your answer to question 1 here:</p>
+<br>
+<form id="q1_answer_id" name="q1_answer_name" action="/SRA_quiz_1/add_answer/" method="POST">
+{%csrf_token%}
+<input type='text' name='q1_answer' value=''><br><br>
+<input class='btn' type='submit' value='Submit' />
+</form>
+
