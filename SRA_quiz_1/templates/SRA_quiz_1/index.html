@@ -1,13 +1,15 @@
-<h2>Some basic html.</h2>
+<h2>This is index.html</h2>
+
+<p>The next bit is to enter your email address, to use as a unique identifier, then you'll be logged in or added as a user, then you can take the quiz.</p>
 
 
 
 
-<p>Enter your answer to question 1 here:</p>
+<p>Enter email address here:</p>
 <br>
-<form id="q1_answer_id" name="q1_answer_name" action="/SRA_quiz_1/add_answer/" method="POST">
-{%csrf_token%}
-<input type='text' name='q1_answer' value=''><br><br>
-<input class='btn' type='submit' value='Submit' />
-</form>
 
+<form id="check_email" name="check_email" action="/SRA_quiz_1/check_email/" method="POST">{% csrf_token %}
+	<label for="email" name="email">Email</label>
+	<input class="email" name="email" type="text" /><br>
+	<input class="btn" type="submit" value="Enter" />
+</form>
