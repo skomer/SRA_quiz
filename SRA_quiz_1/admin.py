@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from .models import Onemodel
+from .models import Entry
 
-admin.site.register(Onemodel)
+admin.site.register(Entry)
 
 
 # Register your models here.

@@ -5,26 +5,62 @@
 
 	<h1>SRA quiz</h1>
 
-	<h2>Q1 answer: {{ q1_answer_id }}</h2>
+	<h2>Your email address: {{ email }}</h2>
 
-	<h3>Thumbnails; just here for show</h3>
-	<p></p>
-	<p><img src='/static/SRA_quiz_1/images/testimage2-min_tn.jpg'></p>
-	<p><img src='/static/SRA_quiz_1/images/testimage3-min_tn.jpg'></p>
-	<p><img src='/static/SRA_quiz_1/images/testimage3-min_tn.jpg'></p>
+	<h3>Your answers: </h3>
+
 
 	<h2>Fade Transition</h2>
-	<a class="group2"  href='/static/SRA_quiz_1/images/testimage1-min.jpg'>
-		<img src='/static/SRA_quiz_1/images/testimage1-min_tn.jpg'></a>
+	<p>
+		<a class="group2" href='/static/SRA_quiz_1/images/testimage1-min.jpg'> <img src='/static/SRA_quiz_1/images/testimage1-min_tn.jpg'></a>
+		<form
+			id="user_answer"
+			name="user_answer"
+			action="/SRA_quiz_1/add_answer/"
+			method="POST">
+			{% csrf_token %}
+			<input type="hidden" name="email_from_form" value="{{ email }}">
+			q1 answer here please: <input type="text" name="q1_answer_id" value="{{ request }}">
+			<input class="btn" type="submit" value="Submit!!!1!!" />
+		</form>
+	</p>
+	<p>
+		<a class="group2" href='/static/SRA_quiz_1/images/testimage2-min.jpg'> <img src='/static/SRA_quiz_1/images/testimage2-min_tn.jpg'></a>
+		<form id="user_answer" name="user_answer" action="/SRA_quiz_1/add_answer/" method="POST">
+			{% csrf_token %}
+			q2 answer here please: <input type="text" name="q2_answer_id" value="">
+			<input class="btn" type="submit" value="Submit!!!1!!" />
+		</form>
+	</p>
 	
-	<p><a class="group2" href='/static/SRA_quiz_1/images/testimage2-min.jpg' title="blah" >Grouped Photo 1</a></p>
-	<p><a class="group2" href='/static/SRA_quiz_1/images/testimage3-min.jpg' title="blah2">Grouped Photo 2</a></p>
-	<p><a class="group2" href='/static/SRA_quiz_1/images/testimage4-min.jpg' title="blah3">Grouped Photo 3</a></p>
+	<a class="group2" href='/static/SRA_quiz_1/images/testimage3-min.jpg'> <img src='/static/SRA_quiz_1/images/testimage3-min_tn.jpg'></a>
+	<form id="user_answer" name="user_answer" action="/SRA_quiz_1/add_answer/" method="POST">
+			{% csrf_token %}
+			q3 answer here please: <input type="text" name="q3_answer_id" value="">
+			<input class="btn" type="submit" value="Submit!!!1!!" />
+		</form>
 
 
+	<a class="group2" href='/static/SRA_quiz_1/images/testimage4-min.jpg'> <img src='/static/SRA_quiz_1/images/testimage4-min_tn.jpg'></a>
+	<form id="user_answer" name="user_answer" action="/SRA_quiz_1/add_answer/" method="POST">
+			{% csrf_token %}
+			q4 answer here please: <input type="text" name="q4_answer_id" value="">
+			<input class="btn" type="submit" value="Submit!!!1!!" />
+		</form>
+
+
+	<a class="group2" href='/static/SRA_quiz_1/images/testimage5-min.jpg'> <img src='/static/SRA_quiz_1/images/testimage5-min_tn.jpg'></a>
+	<form id="user_answer" name="user_answer" action="/SRA_quiz_1/add_answer/" method="POST">
+			{% csrf_token %}
+			q5 answer here please: <input type="text" name="q5_answer_id" value="">
+			<input class="btn" type="submit" value="Submit!!!1!!" />
+		</form>
+
+
+	<a class="group2" href='/static/SRA_quiz_1/images/testimage6-min.jpg'> <img src='/static/SRA_quiz_1/images/testimage6-min_tn.jpg'></a>
 	<form id="user_answer" name="user_answer" action="/SRA_quiz_1/add_answer/" method="POST">
 		{% csrf_token %}
-		q1 answer here please: <input type="text" name="q1_answer_id" value="">
+		q6 answer here please: <input type="text" name="q6_answer_id" value="">
 		<input class="btn" type="submit" value="Submit!!!1!!" />
 	</form>
 
